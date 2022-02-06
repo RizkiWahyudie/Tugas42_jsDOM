@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .flex {
+      display: flex;
+    }
+    .droptarget {
+      width: 100px;
+      height: 35px;
+      margin: 15px;
+      padding: 10px;
+      border: 1px solid black;
+    }
+  </style>
+  <body>
+    <p>Drag element diantara 2 kotak!</p>
+    <div class="flex">
+      <div
+        class="droptarget"
+        ondrop="drop(event)"
+        ondragover="allowDrop(event)"
+      >
+        <!-- on drag start untuk mengambil textnya, jadi kalo kita mendrag textnya maka dia akan disimpan divariabel text di js -->
+        <!-- dragging artinya apabila text sedang di drag maka keterangannya text sedang didrag ada di js -->
+        <!-- saat sudah didrop dia akan mengambil text yang ada di text js untuk di drop ketujuan -->
+        <!-- lalu text keterangan diubah  bahwa elemen sudah didrop -->
+
+        <p
+          ondragstart="dragStart(event)"
+          ondrag="dragging(event)"
+          draggable="true"
+          id="dragtarget"
+        >
+          Drag saya!
+        </p>
+      </div>
+      <div
+        class="droptarget"
+        ondrop="drop(event)"
+        ondragover="allowDrop(event)"
+      ></div>
+    </div>
+
+    <p id="object_text"></p>
+    <script type="text/javascript" src="tugas42.js"></script>
+  </body>
+</html>
